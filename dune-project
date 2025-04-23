@@ -1,6 +1,8 @@
-(lang dune 3.17)
+(lang dune 3.8)
 
 (name mysite_OCaml)
+
+(version 0.1.0)
 
 (generate_opam_files true)
 
@@ -17,10 +19,23 @@
 
 (package
  (name mysite_OCaml)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml)
- (tags
-  ("add topics" "to describe" your project)))
+ (synopsis "Personal website built with OCaml")
+ (description "A personal website showcasing CV and work history")
+ (depends
+  (ocaml (>= 4.14.0))
+  dream
+  dream-httpaf
+  dream-h2
+  dream-pure
+  tyxml
+  ppx_tyxml
+  caqti
+  caqti-driver-postgresql
+  logs
+  lwt
+  lwt_ppx
+  ptime
+  yojson
+  (alcotest :with-test)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html

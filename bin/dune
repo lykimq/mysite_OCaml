@@ -1,4 +1,5 @@
 (executable
- (public_name mysite_OCaml)
  (name main)
- (libraries mysite_OCaml))
+ (public_name mysite_OCaml)
+ (libraries dream tyxml logs lwt mysite_OCaml)
+ (preprocess (pps lwt_ppx)))
