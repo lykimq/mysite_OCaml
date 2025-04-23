@@ -1,0 +1,4 @@
+(executable
+ (public_name mysite_OCaml)
+ (name main)
+ (libraries mysite_OCaml))
