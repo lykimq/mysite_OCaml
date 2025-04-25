@@ -44,4 +44,4 @@ let render_publications_page () =
         ]
       ])
   in
-  Format.asprintf "%a" (Tyxml.Html.pp ()) page
+  Format.asprintf "%a" (Tyxml.Html.pp ~indent:false ()) page

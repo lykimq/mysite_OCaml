@@ -3,16 +3,16 @@ open Data_store
 open Shared_view
 
 let create_collaborator_card collaborator =
-  let name = remove_quotes collaborator.name in
-  let institution = remove_quotes collaborator.institution in
-  let department = remove_quotes collaborator.department in
-  let email = remove_quotes collaborator.email in
+  let name = collaborator.name in
+  let institution = collaborator.institution in
+  let department = collaborator.department in
+  let email = collaborator.email in
   let website_url = match collaborator.website_url with
-    | Some url -> Some (remove_quotes url)
+    | Some url -> Some url
     | None -> None
   in
-  let collaboration_type = remove_quotes collaborator.collaboration_type in
-  let description = remove_quotes collaborator.description in
+  let collaboration_type = collaborator.collaboration_type in
+  let description = collaborator.description in
 
   create_card [
     div ~a:[a_class ["collaborator-info"]] [
