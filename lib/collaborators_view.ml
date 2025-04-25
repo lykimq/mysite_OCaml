@@ -2,17 +2,32 @@ open Tyxml.Html
 open Data_store
 open Shared_view
 
-let create_collaborator_card (collaborator : collaborator) =
+let create_collaborator_card collaborator =
+  let name = remove_quotes collaborator.name in
+  let institution = remove_quotes collaborator.institution in
+  let department = remove_quotes collaborator.department in
+  let email = remove_quotes collaborator.email in
+  let website_url = match collaborator.website_url with
+    | Some url -> Some (remove_quotes url)
+    | None -> None
+  in
+  let collaboration_type = remove_quotes collaborator.collaboration_type in
+  let description = remove_quotes collaborator.description in
+
   create_card [
-    h3 [txt collaborator.name];
-    p ~a:[a_class ["institution"]] [txt collaborator.institution];
-    p ~a:[a_class ["department"]] [txt collaborator.department];
-    p ~a:[a_class ["email"]] [txt collaborator.email];
-    (match collaborator.website_url with
-    | Some url -> a ~a:[a_href url; a_class ["website-link"]] [txt "View Website"]
-    | None -> div []);
-    p ~a:[a_class ["collaboration-type"]] [txt collaborator.collaboration_type];
-    p ~a:[a_class ["description"]] [txt collaborator.description]
+    div ~a:[a_class ["collaborator-info"]] [
+      h3 ~a:[a_class ["collaborator-name"]] [txt name];
+      div ~a:[a_class ["collaborator-details"]] [
+        p [txt institution];
+        p [txt department];
+        p [txt email];
+        p [txt collaboration_type];
+        p [txt description];
+        (match website_url with
+        | Some url -> p ~a:[a_class ["website-link"]] [a ~a:[a_href url] [txt "Website"]]
+        | None -> p [txt ""])
+      ]
+    ]
   ]
 
 let render_collaborators_page () =

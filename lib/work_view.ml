@@ -9,7 +9,7 @@ let create_work_card (work : work_experience) =
     create_date_range work.start_date work.end_date;
     p ~a:[a_class ["location"]] [txt work.location];
     match work.description with
-    | Some desc -> create_description_list desc
+    | Some desc -> create_description_list (List.map remove_quotes desc)
     | None -> div [];
     match work.technologies with
     | Some techs -> div ~a:[a_class ["tech-tags"]] (List.map create_tech_tag techs)
@@ -36,4 +36,4 @@ let render_work_page () =
         ]
       ])
   in
-  Format.asprintf "%a" (Tyxml.Html.pp ()) page
+  Format.asprintf "%a" (Tyxml.Html.pp ~indent:false ()) page

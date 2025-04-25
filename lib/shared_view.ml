@@ -1,5 +1,8 @@
 open Tyxml.Html
 
+let remove_quotes text =
+  String.map (fun c -> if c = '"' then ' ' else c) text
+
 let create_page_header title =
   div ~a:[a_class ["page-header"]] [
     h1 [txt title];
@@ -35,7 +38,7 @@ let create_date_range start_date end_date =
 
 let create_description_list items =
   ul ~a:[a_class ["description-list"]] (
-    List.map (fun item -> li [txt item]) items
+    List.map (fun item -> li [txt (remove_quotes item)]) items
   )
 
 let create_author_list authors =
