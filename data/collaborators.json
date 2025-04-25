@@ -4,10 +4,19 @@
       "name": "Jérôme FERET",
       "institution": "INRIA",
       "department": "Research fellow",
-      "email": "",
-      "website_url": null,
+      "email": " jerome.feret@info.ens.psl.eu",
+      "website_url": "https://www.di.ens.fr/~feret/ ",
       "collaboration_type": "Research Collaboration",
-      "description": "Collaborated on multiple research projects in formal verification and static analysis"
+      "description": "Collaborated on research projects (KaSa) in formal verification and static analysis"
+    },
+    {
+      "name": "Dr.Hab. Frédéric Blanqui",
+      "institution": "INRIA",
+      "department": "Research fellow",
+      "email": "frederic.blanqui@inria.fr",
+      "website_url": "https://blanqui.gitlabpages.inria.fr/",
+      "collaboration_type": "Supervisor",
+      "description": "Supervisor of my PhD thesis (Rainbow, CoLoR)"
     }
   ]
 }

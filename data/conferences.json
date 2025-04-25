@@ -5,7 +5,7 @@
       "location": "New York University, New York, New York City, USA",
       "start_date": "29 Aug 2017",
       "end_date": "29 Aug 2017",
-      "website_url": null,
+      "website_url": "http://www.cs.cmu.edu/~sasb2017/",
       "description": "Presented: Translating BNGL models into Kappa, our experience"
     },
     {
@@ -13,7 +13,7 @@
       "location": "New York City, New York, USA",
       "start_date": "30 Aug 2017",
       "end_date": "1 Sep 2017",
-      "website_url": null,
+      "website_url": "http://staticanalysis.org/sas2017/sas2017.html",
       "description": "Attended conference"
     },
     {
@@ -21,8 +21,56 @@
       "location": "Darmstadt, Germany",
       "start_date": "27 Sep 2017",
       "end_date": "29 Sep 2017",
-      "website_url": null,
+      "website_url": "http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=61054&copyownerid=95777",
       "description": "Presented: KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models"
+    },
+    {
+      "name": "The 14th Conference on Computational Methods in Systems Biology",
+      "location": "Cambridge, UK",
+      "start_date": "21 Sept 2016",
+      "end_date": "23 Sept 2016",
+      "website_url": "https://www.cl.cam.ac.uk/events/cmsb2016/",
+      "description": "Presented: Local traces: an over-approximation of the behaviour of the proteins in rule-based models"
+    },
+    {
+      "name": "The 7th International Workshop on Static Analysis and Systems Biology",
+      "location": "Edinburgh, UK",
+      "start_date": "7 Sept 2016",
+      "end_date": "7 Sept 2016",
+      "website_url": "https://sasb2016.fi.muni.cz/",
+      "description": "Presented: Reachability analysis via orthogonal sets of patterns"
+    },
+    {
+      "name": "The 13th Conference on Computational Methods for Systems Biology",
+      "location": "Nantes, France",
+      "start_date": "16 Sept 2015",
+      "end_date": "18 Sept 2015",
+      "website_url": "https://cmsb2015.sciencesconf.org/",
+      "description": "Attended conference"
+    },
+    {
+      "name": "The 22nd International Static Analysis Symbosium",
+      "location": "Saint Malo, France",
+      "start_date": "9 Sept 2015",
+      "end_date": "11 Sept 2015",
+      "website_url": "",
+      "description": "Attended conference"
+    },
+    {
+      "name": "The Sixth International Workshop on Static Analysis and Systems Biology",
+      "location": "Saint Malo, France",
+      "start_date": "8 Sept 2015",
+      "end_date": "8 Sept 2015",
+      "website_url": "",
+      "description": "Attended conference"
+    },
+    {
+      "name": "Summer School on Generic and Effectful Programming",
+      "location": "St Anne's College, Oxford, UK",
+      "start_date": "6 July 2015",
+      "end_date": "10 July 2015",
+      "website_url": "https://www.cs.ox.ac.uk/projects/utgp/school/",
+      "description": "Summer school attended"
     }
   ]
 }

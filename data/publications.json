@@ -2,31 +2,167 @@
   "papers": [
     {
       "id": "1",
-      "title": "KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models",
-      "authors": ["Kim Quyen Ly", "Jérôme Feret", "Ferdinanda Camporesi"],
-      "conference": "14th Conference on Computational Methods in Systems Biology",
+      "title": "Translating BNGL models into Kappa, our experience",
+      "authors": ["Quyen Nguyen", "Jérôme Feret"],
+      "conference": "8th International Workshop on Static Analysis for Systems Biology (SASB 2017)",
       "year": 2017,
       "paper_url": null,
       "talk_url": null
     },
     {
       "id": "2",
+      "title": "KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models",
+      "authors": ["Quyen Nguyen", "Jérôme Feret", "Ferdinanda Camporesi"],
+      "conference": "14th Conference on Computational Methods in Systems Biology (CMSB 2017)",
+      "year": 2017,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "3",
       "title": "Local traces: an over-approximation of the behaviour of the proteins in rule-based models",
-      "authors": ["Kim Quyen Ly", "Jérôme Feret"],
-      "conference": "14th Conference on Computational Methods in Systems Biology",
+      "authors": ["Quyen Nguyen", "Jérôme Feret"],
+      "conference": "14th Conference on Computational Methods in Systems Biology (CMSB 2016)",
       "year": 2016,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "4",
+      "title": "Reachability analysis via orthogonal sets of patterns",
+      "authors": ["Quyen Nguyen", "Jérôme Feret"],
+      "conference": "7th International Workshop on Static Analysis and Systems Biology (SASB 2016)",
+      "year": 2016,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "5",
+      "title": "PhD thesis: Automated verification of termination certificates",
+      "authors": ["Quyen Nguyen"],
+      "conference": "University Joseph Fourier, Grenoble, France",
+      "year": 2014,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "6",
+      "title": "Automated verification of termination certificates",
+      "authors": ["Quyen Nguyen", "F. Blanqui"],
+      "conference": "15th Vietnamese National Symposium of Selected ICT Problems",
+      "year": 2012,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "7",
+      "title": "The certification of polynomial interpretations on rationals",
+      "authors": ["Quyen Nguyen"],
+      "conference": "Tsinghua university, Beijing, China",
+      "year": 2010,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "8",
+      "title": "Studying and implementing 3D geometric routing algorithm and spanners",
+      "authors": ["Quyen Nguyen"],
+      "conference": "INRIA Bordeaux, Bordeaux, France",
+      "year": 2009,
+      "paper_url": null,
+      "talk_url": null
+    }
+  ],
+  "talks": [
+    {
+      "id": "1",
+      "title": "Translating BNGL models into Kappa, our experience",
+      "authors": ["Quyen Nguyen", "Jérôme Feret"],
+      "conference": "8th International Workshop on Static Analysis for Systems Biology (SASB 2017)",
+      "year": 2017,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "2",
+      "title": "KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models",
+      "authors": ["Quyen Nguyen", "Jérôme Feret", "Ferdinanda Camporesi"],
+      "conference": "14th Conference on Computational Methods in Systems Biology (CMSB 2017)",
+      "year": 2017,
       "paper_url": null,
       "talk_url": null
     },
     {
       "id": "3",
       "title": "Reachability analysis via orthogonal sets of patterns",
-      "authors": ["Kim Quyen Ly", "Jérôme Feret"],
-      "conference": "7th International Workshop on Static Analysis and Systems Biology",
+      "authors": ["Quyen Nguyen", "Jérôme Feret"],
+      "conference": "7th International Workshop on Static Analysis and Systems Biology (SASB 2016)",
       "year": 2016,
       "paper_url": null,
       "talk_url": null
+    },
+    {
+      "id": "4",
+      "title": "PhD thesis: Automated verification of termination certificates",
+      "authors": ["Quyen Nguyen"],
+      "conference": "University Joseph Fourier, Grenoble, France",
+      "year": 2014,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "5",
+      "title": "Automated verification of termination certificates",
+      "authors": ["Quyen Nguyen", "F. Blanqui"],
+      "conference": "1st PhD conference at LIAMA",
+      "year": 2013,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "6",
+      "title": "Automated verification of termination certificates",
+      "authors": ["Quyen Nguyen", "F. Blanqui"],
+      "conference": "15th Vietnamese National Symposium of Selected ICT Problems",
+      "year": 2012,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "7",
+      "title": "Confluence, local confluence, critical pair lemma, orthogonal systems",
+      "authors": ["Quyen Nguyen"],
+      "conference": "PhD seminar at CAS",
+      "year": 2012,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "8",
+      "title": "Automated verification of termination certificates",
+      "authors": ["Quyen Nguyen", "F. Blanqui"],
+      "conference": "2nd PhD day at Tsinghua University",
+      "year": 2012,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "9",
+      "title": "Automated verification of termination certificates",
+      "authors": ["Quyen Nguyen", "F. Blanqui"],
+      "conference": "1st PhD day at Tsinghua University",
+      "year": 2011,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "10",
+      "title": "Coq formalization of polynomial interpretations on Q",
+      "authors": ["Quyen Nguyen"],
+      "conference": "INRIA internship",
+      "year": 2010,
+      "paper_url": null,
+      "talk_url": null
     }
-  ],
-  "talks": []
+  ]
 }

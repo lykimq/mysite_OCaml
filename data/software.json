@@ -1,23 +1,30 @@
 {
   "projects": [
     {
+      "name": "Tezos",
+      "description": "A blockchain platform that allows users to send and receive tokens, create smart contracts, and participate in governance.",
+      "github_url": "https://github.com/tezos/tezos",
+      "documentation_url": "https://tezos.com/developers/docs",
+      "technologies": ["OCaml", "ReasonML", "JavaScript", "Docker", "Git"]
+    },
+    {
       "name": "KaSa",
       "description": "A static analyser for Kappa models. It is written in functional programming language OCaml",
-      "github_url": null,
-      "documentation_url": null,
+      "github_url": "https://github.com/Kappa-Dev/KappaTools",
+      "documentation_url": "https://kappalanguage.org/",
       "technologies": ["OCaml"]
     },
     {
       "name": "Rainbow",
       "description": "A termination certificate verifier. It is an OCaml program, extracted from the program written in the proof assistant Coq",
-      "github_url": null,
+      "github_url": "https://github.com/fblanqui/rainbow",
       "documentation_url": null,
       "technologies": ["OCaml", "Coq"]
     },
     {
       "name": "CoLoR",
       "description": "A Coq library on rewriting theory and termination. It is written in the proof assistant Coq",
-      "github_url": null,
+      "github_url": "https://github.com/fblanqui/color",
       "documentation_url": null,
       "technologies": ["Coq"]
     }
