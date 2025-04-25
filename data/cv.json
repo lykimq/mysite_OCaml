@@ -1,51 +1,163 @@
 {
-  "name": "John Doe",
-  "title": "Senior Software Engineer",
-  "email": "john.doe@example.com",
-  "phone": "+1 (555) 123-4567",
-  "location": "San Francisco, CA",
-  "summary": "Experienced software engineer with a passion for functional programming and web development.",
-  "work_experience": [
+  "objective": "Experienced Software Developer and Research Engineer with a background in Computer Science, specializing in back-end development, blockchain technologies, functional programming, formal verification, and technical writing. Seeking opportunities to apply my expertise in software development and research.",
+  "education": [
     {
-      "company": "Tech Corp",
-      "position": "Senior Software Engineer",
-      "start_date": "2020-01",
-      "end_date": null,
+      "institution": "Université Grenoble Alpes",
+      "degree": "PhD",
+      "field": "Computer Science",
+      "start_date": "Jan 2011",
+      "end_date": "Oct 2014"
+    },
+    {
+      "institution": "Université de Bordeaux",
+      "degree": "Master of Science",
+      "field": "Computer Science",
+      "start_date": "Jan 2009",
+      "end_date": "Dec 2009"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Sabbatical Leave",
+      "position": "Self-Directed Technical Development",
+      "start_date": "Apr 2024",
+      "end_date": "Feb 2025",
       "description": [
-        "Led development of core product features",
-        "Mentored junior developers",
-        "Implemented CI/CD pipeline"
+        "Strengthened OCaml programming expertise through intensive practice with algorithms and data structures",
+        "Developed various projects covering system programming, networking, and data structures",
+        "Enhanced testing practices using multiple OCaml testing frameworks",
+        "Focus on deepening fundamental computer science concepts and algorithms",
+        "Full-Stack Project Development with React, TypeScript, CSS, Node.js, Express, PostgreSQL",
+        "Mobile application development with React Native Expo, Firebase, Google Cloud"
       ]
     },
     {
-      "company": "Startup Inc",
-      "position": "Software Engineer",
-      "start_date": "2018-06",
-      "end_date": "2019-12",
+      "company": "Marigold",
+      "position": "Senior Software Developer",
+      "start_date": "Aug 2021",
+      "end_date": "Mar 2024",
       "description": [
-        "Developed RESTful APIs",
-        "Implemented automated testing",
-        "Optimized database queries"
+        "Played a key role in Tezos Blockchain ecosystem (focus on Layer 2 solutions)",
+        "Collaborated with diverse teams, including testing, infrastructure, dApps, UX enhancements",
+        "Worked with Gitlab/GitHub CI/CD, wrote merge requests, reviewed merge requests",
+        "Worked in teams with different cultures and languages",
+        "Authored comprehensive technical documents"
       ]
-    }
-  ],
-  "education": [
+    },
     {
-      "institution": "University of Technology",
-      "degree": "Master of Science",
-      "field": "Computer Science",
-      "start_date": "2016-09",
-      "end_date": "2018-05"
+      "company": "Nomadic Labs",
+      "position": "Research Engineer",
+      "start_date": "Jan 2018",
+      "end_date": "Jun 2021",
+      "description": [
+        "Core developer for Tezos Blockchain pre-mainnet launch",
+        "Actively participated in technical training sessions and master classes",
+        "Contributed to protocol upgrades and core feature development",
+        "Improved security in Tezos projects through research project trying to integrate formal methods"
+      ]
+    },
+    {
+      "company": "INRIA Paris",
+      "position": "Research Engineer",
+      "start_date": "Jan 2015",
+      "end_date": "Dec 2017",
+      "description": [
+        "Developed KaSa, a static analyzer for Kappa models, using OCaml",
+        "Focused on abstract interpretation tools for biochemical models"
+      ]
     }
   ],
   "skills": [
     {
-      "category": "Programming Languages",
-      "items": ["OCaml", "Rust", "Python", "JavaScript"]
+      "category": "Core Technologies",
+      "items": [
+        "Programming Languages: OCaml, Coq, Functional Programming (Expert Level)",
+        "Rust, TypeScript, JavaScript, React Native Expo, Node.js, PostgreSQL (Intermediate Level)",
+        "Blockchain Technologies: Tezos Protocol, Layer 1/2 Solutions, Smart Contracts, dApps",
+        "Development Tools: Git, GitLab/GitHub CI/CD, Docker"
+      ]
     },
     {
-      "category": "Tools & Technologies",
-      "items": ["Git", "Docker", "PostgreSQL", "React"]
+      "category": "Specialized Skills",
+      "items": [
+        "Verification & Analysis: Formal Verification, Abstract Interpretation, Static Analysis",
+        "Software Engineering: Test-Driven Development, Code Review, Technical Documentation",
+        "Research: Academic Publishing, Technical Writing, Algorithm Design"
+      ]
+    },
+    {
+      "category": "Languages",
+      "items": [
+        "Vietnamese: Native",
+        "English: Professional working proficiency",
+        "French: Intermediate (B1)"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models",
+      "authors": ["Kim Quyen Ly", "Jérôme Feret", "Ferdinanda Camporesi"],
+      "conference": "14th Conference on Computational Methods in Systems Biology",
+      "year": 2017
+    },
+    {
+      "title": "Local traces: an over-approximation of the behaviour of the proteins in rule-based models",
+      "authors": ["Kim Quyen Ly", "Jérôme Feret"],
+      "conference": "14th Conference on Computational Methods in Systems Biology",
+      "year": 2016
+    },
+    {
+      "title": "Reachability analysis via orthogonal sets of patterns",
+      "authors": ["Kim Quyen Ly", "Jérôme Feret"],
+      "conference": "7th International Workshop on Static Analysis and Systems Biology",
+      "year": 2016
+    }
+  ],
+  "conferences": [
+    {
+      "name": "The 8th International Workshop on Static Analysis for Systems Biology",
+      "location": "New York University, New York, New York City, USA",
+      "date": "29 Aug 2017",
+      "description": "Presented: Translating BNGL models into Kappa, our experience"
+    },
+    {
+      "name": "The 24th Static Analysis Symposium",
+      "location": "New York City, New York, USA",
+      "date": "30 Aug 2017 - 1 Sep 2017",
+      "description": "Attended conference"
+    },
+    {
+      "name": "The 15th Conference on Computational Methods in Systems Biology",
+      "location": "Darmstadt, Germany",
+      "date": "27 Sep 2017 - 29 Sep 2017",
+      "description": "Presented: KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models"
+    }
+  ],
+  "software": [
+    {
+      "name": "KaSa",
+      "description": "A static analyser for Kappa models. It is written in functional programming language OCaml",
+      "technologies": ["OCaml"]
+    },
+    {
+      "name": "Rainbow",
+      "description": "A termination certificate verifier. It is an OCaml program, extracted from the program written in the proof assistant Coq",
+      "technologies": ["OCaml", "Coq"]
+    },
+    {
+      "name": "CoLoR",
+      "description": "A Coq library on rewriting theory and termination. It is written in the proof assistant Coq",
+      "technologies": ["Coq"]
+    }
+  ],
+  "collaborators": [
+    {
+      "name": "Jérôme FERET",
+      "institution": "INRIA",
+      "department": "Research fellow",
+      "collaboration_type": "Research Collaboration",
+      "description": "Collaborated on multiple research projects in formal verification and static analysis"
     }
   ]
 }

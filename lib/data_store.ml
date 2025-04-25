@@ -29,9 +29,6 @@ type bio = {
   phone: string;
   location: string;
   summary: string;
-  education: education list;
-  experience: work_experience list;
-  skills: skill list;
 }
 
 type publication = {
@@ -77,50 +74,6 @@ let read_json_file filename =
     Some content
   with _ -> None
 
-
-let get_work_experience () =
-  match read_json_file "data/work_experience.json" with
-  | Some (`List experiences) ->
-    let work_experience = List.map (fun w ->
-      {
-        company = w |> member "company" |> to_string;
-        position = w |> member "position" |> to_string;
-        start_date = w |> member "start_date" |> to_string;
-        end_date = w |> member "end_date" |> to_string_option;
-        description = w |> member "description" |> to_list |> List.map to_string;
-      }
-    ) experiences in
-    Some work_experience
-  | _ -> None
-
-let get_education () =
-  match read_json_file "data/education.json" with
-  | Some (`List education) ->
-    let education = List.map (fun e ->
-      {
-        institution = e |> member "institution" |> to_string;
-        degree = e |> member "degree" |> to_string;
-        field = e |> member "field" |> to_string;
-        start_date = e |> member "start_date" |> to_string;
-        end_date = e |> member "end_date" |> to_string_option;
-      }
-    ) education in
-    Some education
-  | _ -> None
-
-let get_skills () =
-  match read_json_file "data/skills.json" with
-  | Some (`List skills) ->
-    let skills = List.map (fun s ->
-      {
-        category = s |> member "category" |> to_string;
-        items = s |> member "items" |> to_list |> List.map to_string |> List.filter (fun s -> s <> "");
-      }
-    ) skills in
-    Some skills
-  | _ -> None
-
-
 let get_bio () =
   match read_json_file "data/bio.json" with
   | Some json ->
@@ -130,6 +83,27 @@ let get_bio () =
     let phone = json |> member "phone" |> to_string in
     let location = json |> member "location" |> to_string in
     let summary = json |> member "summary" |> to_string in
+    Some { name; title; email; phone; location; summary }
+  | None -> None
+
+let get_work_experience () =
+  match read_json_file "data/work_experience.json" with
+  | Some json ->
+    let experiences = json |> member "experience" |> to_list |> List.map (fun w ->
+      {
+        company = w |> member "company" |> to_string;
+        position = w |> member "position" |> to_string;
+        start_date = w |> member "start_date" |> to_string;
+        end_date = w |> member "end_date" |> to_string_option;
+        description = w |> member "description" |> to_list |> List.map to_string;
+      }
+    ) in
+    Some experiences
+  | _ -> None
+
+let get_education () =
+  match read_json_file "data/education.json" with
+  | Some json ->
     let education = json |> member "education" |> to_list |> List.map (fun e ->
       {
         institution = e |> member "institution" |> to_string;
@@ -139,23 +113,20 @@ let get_bio () =
         end_date = e |> member "end_date" |> to_string_option;
       }
     ) in
-    let experience = json |> member "experience" |> to_list |> List.map (fun w ->
-      {
-        company = w |> member "company" |> to_string;
-        position = w |> member "position" |> to_string;
-        start_date = w |> member "start_date" |> to_string;
-        end_date = w |> member "end_date" |> to_string_option;
-        description = w |> member "description" |> to_list |> List.map to_string;
-      }
-    ) in
+    Some education
+  | _ -> None
+
+let get_skills () =
+  match read_json_file "data/skills.json" with
+  | Some json ->
     let skills = json |> member "skills" |> to_list |> List.map (fun s ->
       {
         category = s |> member "category" |> to_string;
         items = s |> member "items" |> to_list |> List.map to_string;
       }
     ) in
-    Some { name; title; email; phone; location; summary; education; experience; skills }
-  | None -> None
+    Some skills
+  | _ -> None
 
 let get_publications () =
   match read_json_file "data/publications.json" with
@@ -186,8 +157,8 @@ let get_publications () =
   | None -> None
 
 let get_conferences () =
-  try
-    let json = Yojson.Basic.from_file "data/conferences.json" in
+  match read_json_file "data/conferences.json" with
+  | Some json ->
     let conferences = json |> member "conferences" |> to_list |> List.map (fun conf ->
       {
         name = conf |> member "name" |> to_string;
@@ -199,17 +170,12 @@ let get_conferences () =
       }
     ) in
     Some conferences
-  with
-  | Sys_error _ -> None
-  | Yojson.Json_error _ -> None
-  | Type_error (msg, _) ->
-      Logs.warn (fun m -> m "Error parsing conferences.json: %s" msg);
-      None
+  | None -> None
 
 let get_software () =
   match read_json_file "data/software.json" with
-  | Some (`List projects) ->
-    let projects = List.map (fun p ->
+  | Some json ->
+    let projects = json |> member "projects" |> to_list |> List.map (fun p ->
       {
         name = p |> member "name" |> to_string;
         description = p |> member "description" |> to_string;
@@ -217,14 +183,14 @@ let get_software () =
         documentation_url = p |> member "documentation_url" |> to_string_option;
         technologies = p |> member "technologies" |> to_list |> List.map to_string;
       }
-    ) projects in
+    ) in
     Some projects
   | _ -> None
 
 let get_collaborators () =
   match read_json_file "data/collaborators.json" with
-  | Some (`List collaborators) ->
-    let collaborators = List.map (fun c ->
+  | Some json ->
+    let collaborators = json |> member "collaborators" |> to_list |> List.map (fun c ->
       {
         name = c |> member "name" |> to_string;
         institution = c |> member "institution" |> to_string;
@@ -234,6 +200,6 @@ let get_collaborators () =
         collaboration_type = c |> member "collaboration_type" |> to_string;
         description = c |> member "description" |> to_string;
       }
-    ) collaborators in
+    ) in
     Some collaborators
   | _ -> None

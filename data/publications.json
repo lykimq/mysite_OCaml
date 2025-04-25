@@ -1,33 +1,32 @@
 {
   "papers": [
     {
-      "id": "paper1",
-      "title": "Advanced Machine Learning Techniques",
-      "authors": ["John Doe", "Jane Smith", "Bob Johnson"],
-      "conference": "ICML 2023",
-      "year": 2023,
-      "paper_url": "https://example.com/paper1.pdf",
-      "talk_url": "https://example.com/talk1"
+      "id": "1",
+      "title": "KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models",
+      "authors": ["Kim Quyen Ly", "Jérôme Feret", "Ferdinanda Camporesi"],
+      "conference": "14th Conference on Computational Methods in Systems Biology",
+      "year": 2017,
+      "paper_url": null,
+      "talk_url": null
     },
     {
-      "id": "paper2",
-      "title": "Functional Programming in Practice",
-      "authors": ["John Doe", "Alice Brown"],
-      "conference": "PLDI 2022",
-      "year": 2022,
-      "paper_url": "https://example.com/paper2.pdf",
+      "id": "2",
+      "title": "Local traces: an over-approximation of the behaviour of the proteins in rule-based models",
+      "authors": ["Kim Quyen Ly", "Jérôme Feret"],
+      "conference": "14th Conference on Computational Methods in Systems Biology",
+      "year": 2016,
+      "paper_url": null,
+      "talk_url": null
+    },
+    {
+      "id": "3",
+      "title": "Reachability analysis via orthogonal sets of patterns",
+      "authors": ["Kim Quyen Ly", "Jérôme Feret"],
+      "conference": "7th International Workshop on Static Analysis and Systems Biology",
+      "year": 2016,
+      "paper_url": null,
       "talk_url": null
     }
   ],
-  "talks": [
-    {
-      "id": "talk1",
-      "title": "Introduction to OCaml",
-      "authors": ["John Doe"],
-      "conference": "OCaml Workshop 2023",
-      "year": 2023,
-      "paper_url": null,
-      "talk_url": "https://example.com/talk1"
-    }
-  ]
+  "talks": []
 }

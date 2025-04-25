@@ -1,0 +1,53 @@
+{
+  "experience": [
+    {
+      "company": "Sabbatical Leave",
+      "position": "Self-Directed Technical Development",
+      "start_date": "Apr 2024",
+      "end_date": "Feb 2025",
+      "description": [
+        "Strengthened OCaml programming expertise through intensive practice with algorithms and data structures",
+        "Developed various projects covering system programming, networking, and data structures",
+        "Enhanced testing practices using multiple OCaml testing frameworks",
+        "Focus on deepening fundamental computer science concepts and algorithms",
+        "Full-Stack Project Development with React, TypeScript, CSS, Node.js, Express, PostgreSQL",
+        "Mobile application development with React Native Expo, Firebase, Google Cloud"
+      ]
+    },
+    {
+      "company": "Marigold",
+      "position": "Senior Software Developer",
+      "start_date": "Aug 2021",
+      "end_date": "Mar 2024",
+      "description": [
+        "Played a key role in Tezos Blockchain ecosystem (focus on Layer 2 solutions)",
+        "Collaborated with diverse teams, including testing, infrastructure, dApps, UX enhancements",
+        "Worked with Gitlab/GitHub CI/CD, wrote merge requests, reviewed merge requests",
+        "Worked in teams with different cultures and languages",
+        "Authored comprehensive technical documents"
+      ]
+    },
+    {
+      "company": "Nomadic Labs",
+      "position": "Research Engineer",
+      "start_date": "Jan 2018",
+      "end_date": "Jun 2021",
+      "description": [
+        "Core developer for Tezos Blockchain pre-mainnet launch",
+        "Actively participated in technical training sessions and master classes",
+        "Contributed to protocol upgrades and core feature development",
+        "Improved security in Tezos projects through research project trying to integrate formal methods"
+      ]
+    },
+    {
+      "company": "INRIA Paris",
+      "position": "Research Engineer",
+      "start_date": "Jan 2015",
+      "end_date": "Dec 2017",
+      "description": [
+        "Developed KaSa, a static analyzer for Kappa models, using OCaml",
+        "Focused on abstract interpretation tools for biochemical models"
+      ]
+    }
+  ]
+}

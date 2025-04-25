@@ -29,119 +29,181 @@ let create_bio_section (bio : bio option) =
   | None ->
       div []
 
-let create_nav_links () =
-  div ~a:[a_class ["nav-links"]] [
-    a ~a:[a_href "/education"; a_class ["nav-link"]] [txt "Education"];
-    a ~a:[a_href "/experience"; a_class ["nav-link"]] [txt "Work Experience"];
-    a ~a:[a_href "/skills"; a_class ["nav-link"]] [txt "Skills"];
-    a ~a:[a_href "/publications"; a_class ["nav-link"]] [txt "Publications"];
-    a ~a:[a_href "/conferences"; a_class ["nav-link"]] [txt "Conferences"];
-    a ~a:[a_href "/software"; a_class ["nav-link"]] [txt "Software"];
-    a ~a:[a_href "/collaborators"; a_class ["nav-link"]] [txt "Collaborators"];
+let create_tab_links () =
+  div ~a:[a_class ["tab-links"]] [
+    a ~a:[a_href "/publications"; a_class ["tab-link"]] [txt "Publications"];
+    a ~a:[a_href "/conferences"; a_class ["tab-link"]] [txt "Conferences"];
+    a ~a:[a_href "/software"; a_class ["tab-link"]] [txt "Software"];
   ]
 
-let create_preview_section title items item_to_html =
-  match items with
+let create_education_section education =
+  match education with
   | [] -> div []
-  | items ->
-    let preview_items = take 3 items in
+  | education ->
+    div ~a:[a_class ["content-section"]] [
+      create_section_header "Education";
+      div ~a:[a_class ["content-list"]] (
+        List.map (fun (edu : education) ->
+          div ~a:[a_class ["content-item"]] [
+            h3 [txt edu.institution];
+            p ~a:[a_class ["degree"]] [txt (Printf.sprintf "%s in %s" edu.degree edu.field)];
+            p ~a:[a_class ["date"]] [
+              txt (Printf.sprintf "%s - %s" edu.start_date
+                (match edu.end_date with Some d -> d | None -> "Present"))
+            ]
+          ]
+        ) education
+      )
+    ]
+
+let create_work_experience_section work_experience =
+  match work_experience with
+  | [] -> div []
+  | work_experience ->
+    div ~a:[a_class ["content-section"]] [
+      create_section_header "Work Experience";
+      div ~a:[a_class ["content-list"]] (
+        List.map (fun (exp : work_experience) ->
+          div ~a:[a_class ["content-item"]] [
+            h3 [txt exp.company];
+            p ~a:[a_class ["position"]] [txt exp.position];
+            p ~a:[a_class ["date"]] [
+              txt (Printf.sprintf "%s - %s" exp.start_date
+                (match exp.end_date with Some d -> d | None -> "Present"))
+            ];
+            ul ~a:[a_class ["description-list"]] (
+              List.map (fun desc -> li [txt desc]) exp.description
+            )
+          ]
+        ) work_experience
+      )
+    ]
+
+let create_skills_section skills =
+  match skills with
+  | [] -> div []
+  | skills ->
+    div ~a:[a_class ["content-section"]] [
+      create_section_header "Skills";
+      div ~a:[a_class ["content-list"]] (
+        List.map (fun (skill : skill) ->
+          div ~a:[a_class ["content-item"]] [
+            h3 [txt skill.category];
+            ul ~a:[a_class ["skill-items"]] (
+              List.map (fun item -> li [txt item]) skill.items
+            )
+          ]
+        ) skills
+      )
+    ]
+
+let create_collaborators_section collaborators =
+  match collaborators with
+  | [] -> div []
+  | collaborators ->
+    div ~a:[a_class ["content-section"]] [
+      create_section_header "Collaborators";
+      div ~a:[a_class ["content-list"]] (
+        List.map (fun (collaborator : collaborator) ->
+          div ~a:[a_class ["content-item"]] [
+            h3 [txt collaborator.name];
+            p ~a:[a_class ["institution"]] [txt collaborator.institution];
+            p ~a:[a_class ["department"]] [txt collaborator.department];
+            p ~a:[a_class ["collaboration-type"]] [txt collaborator.collaboration_type];
+            p ~a:[a_class ["description"]] [txt collaborator.description]
+          ]
+        ) collaborators
+      )
+    ]
+
+let create_publications_preview publications =
+  match publications with
+  | [] -> div []
+  | publications ->
+    let preview_items = take 3 publications in
     div ~a:[a_class ["preview-section"]] [
-      create_section_header title;
+      create_section_header "Publications";
       div ~a:[a_class ["preview-list"]] (
-        List.map item_to_html preview_items
+        List.map (fun (pub : publication) ->
+          div ~a:[a_class ["preview-item"]] [
+            h3 [txt pub.title];
+            p ~a:[a_class ["authors"]] [txt (String.concat ", " pub.authors)];
+            p ~a:[a_class ["conference"]] [txt pub.conference];
+            p ~a:[a_class ["year"]] [txt (string_of_int pub.year)]
+          ]
+        ) preview_items
       );
-      if List.length items > 3 then
+      if List.length publications > 3 then
         div ~a:[a_class ["view-more"]] [
-          a ~a:[a_href ("/" ^ String.lowercase_ascii title); a_class ["view-more-link"]] [
-            txt (Printf.sprintf "View all %d %s" (List.length items) title)
+          a ~a:[a_href "/publications"; a_class ["view-more-link"]] [
+            txt (Printf.sprintf "View all %d Publications" (List.length publications))
           ]
         ]
       else div []
     ]
 
-let create_education_preview education =
-  create_preview_section "Education" education (fun (edu : education) ->
-    div ~a:[a_class ["preview-item"]] [
-      h3 [txt edu.institution];
-      p ~a:[a_class ["degree"]] [txt (Printf.sprintf "%s in %s" edu.degree edu.field)];
-      p ~a:[a_class ["date"]] [
-        txt (Printf.sprintf "%s - %s" edu.start_date
-          (match edu.end_date with Some d -> d | None -> "Present"))
-      ]
-    ]
-  )
-
-let create_work_experience_preview work_experience =
-  create_preview_section "Work Experience" work_experience (fun (exp : work_experience) ->
-    div ~a:[a_class ["preview-item"]] [
-      h3 [txt exp.company];
-      p ~a:[a_class ["position"]] [txt exp.position];
-      p ~a:[a_class ["date"]] [
-        txt (Printf.sprintf "%s - %s" exp.start_date
-          (match exp.end_date with Some d -> d | None -> "Present"))
-      ]
-    ]
-  )
-
-let create_skills_preview skills =
-  create_preview_section "Skills" skills (fun (skill : skill) ->
-    div ~a:[a_class ["preview-item"]] [
-      h3 [txt skill.category];
-      ul ~a:[a_class ["skill-items"]] (
-        List.map (fun item -> li [txt item]) skill.items
-      )
-    ]
-  )
-
-let create_publications_preview publications =
-  create_preview_section "Publications" publications (fun (pub : publication) ->
-    div ~a:[a_class ["preview-item"]] [
-      h3 [txt pub.title];
-      p ~a:[a_class ["authors"]] [txt (String.concat ", " pub.authors)];
-      p ~a:[a_class ["conference"]] [txt pub.conference];
-      p ~a:[a_class ["year"]] [txt (string_of_int pub.year)]
-    ]
-  )
-
 let create_conferences_preview conferences =
-  create_preview_section "Conferences" conferences (fun (conf : conference) ->
-    div ~a:[a_class ["preview-item"]] [
-      h3 [txt conf.name];
-      p ~a:[a_class ["location"]] [txt conf.location];
-      p ~a:[a_class ["date"]] [
-        txt (Printf.sprintf "%s - %s" conf.start_date conf.end_date)
-      ]
+  match conferences with
+  | [] -> div []
+  | conferences ->
+    let preview_items = take 3 conferences in
+    div ~a:[a_class ["preview-section"]] [
+      create_section_header "Conferences";
+      div ~a:[a_class ["preview-list"]] (
+        List.map (fun (conf : conference) ->
+          div ~a:[a_class ["preview-item"]] [
+            h3 [txt conf.name];
+            p ~a:[a_class ["location"]] [txt conf.location];
+            p ~a:[a_class ["date"]] [
+              txt (Printf.sprintf "%s - %s" conf.start_date conf.end_date)
+            ]
+          ]
+        ) preview_items
+      );
+      if List.length conferences > 3 then
+        div ~a:[a_class ["view-more"]] [
+          a ~a:[a_href "/conferences"; a_class ["view-more-link"]] [
+            txt (Printf.sprintf "View all %d Conferences" (List.length conferences))
+          ]
+        ]
+      else div []
     ]
-  )
 
 let create_software_preview softwares =
-  create_preview_section "Software" softwares (fun (software : software) ->
-    div ~a:[a_class ["preview-item"]] [
-      h3 [txt software.name];
-      p ~a:[a_class ["description"]] [txt software.description];
-      p ~a:[a_class ["technologies"]] [
-        txt (String.concat ", " software.technologies)
-      ]
+  match softwares with
+  | [] -> div []
+  | softwares ->
+    let preview_items = take 3 softwares in
+    div ~a:[a_class ["preview-section"]] [
+      create_section_header "Software";
+      div ~a:[a_class ["preview-list"]] (
+        List.map (fun (software : software) ->
+          div ~a:[a_class ["preview-item"]] [
+            h3 [txt software.name];
+            p ~a:[a_class ["description"]] [txt software.description];
+            p ~a:[a_class ["technologies"]] [
+              txt (String.concat ", " software.technologies)
+            ]
+          ]
+        ) preview_items
+      );
+      if List.length softwares > 3 then
+        div ~a:[a_class ["view-more"]] [
+          a ~a:[a_href "/software"; a_class ["view-more-link"]] [
+            txt (Printf.sprintf "View all %d Software Projects" (List.length softwares))
+          ]
+        ]
+      else div []
     ]
-  )
-
-let create_collaborators_preview collaborators =
-  create_preview_section "Collaborators" collaborators (fun (collaborator : collaborator) ->
-    div ~a:[a_class ["preview-item"]] [
-      h3 [txt collaborator.name];
-      p ~a:[a_class ["institution"]] [txt collaborator.institution];
-      p ~a:[a_class ["department"]] [txt collaborator.department]
-    ]
-  )
 
 let render_home_page () =
   let bio = get_bio () in
   let education = match get_education () with Some e -> e | None -> [] in
   let work_experience = match get_work_experience () with Some w -> w | None -> [] in
   let skills = match get_skills () with Some s -> s | None -> [] in
-  let (papers, _) = match get_publications () with Some (p, _) -> (p, []) | None -> ([], []) in
-  let conferences = match get_conferences () with Some c -> c | None -> [] in
-  let softwares = match get_software () with Some s -> s | None -> [] in
+  let (_papers, _) = match get_publications () with Some (p, t) -> (p, t) | None -> ([], []) in
+  let _conferences = match get_conferences () with Some c -> c | None -> [] in
+  let _softwares = match get_software () with Some s -> s | None -> [] in
   let collaborators = match get_collaborators () with Some c -> c | None -> [] in
 
   let page =
@@ -156,14 +218,11 @@ let render_home_page () =
       (body ~a:[a_class ["home-page"]] [
         div ~a:[a_class ["container"]] [
           create_bio_section bio;
-          create_nav_links ();
-          create_education_preview education;
-          create_work_experience_preview work_experience;
-          create_skills_preview skills;
-          create_publications_preview papers;
-          create_conferences_preview conferences;
-          create_software_preview softwares;
-          create_collaborators_preview collaborators;
+          create_tab_links ();
+          create_education_section education;
+          create_work_experience_section work_experience;
+          create_skills_section skills;
+          create_collaborators_section collaborators;
         ]
       ])
   in

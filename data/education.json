@@ -1,0 +1,18 @@
+{
+  "education": [
+    {
+      "institution": "Université Grenoble Alpes",
+      "degree": "PhD",
+      "field": "Computer Science",
+      "start_date": "Jan 2011",
+      "end_date": "Oct 2014"
+    },
+    {
+      "institution": "Université de Bordeaux",
+      "degree": "Master of Science",
+      "field": "Computer Science",
+      "start_date": "Jan 2009",
+      "end_date": "Dec 2009"
+    }
+  ]
+}

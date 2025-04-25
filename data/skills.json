@@ -1,0 +1,29 @@
+{
+  "skills": [
+    {
+      "category": "Core Technologies",
+      "items": [
+        "Programming Languages: OCaml, Coq, Functional Programming (Expert Level)",
+        "Rust, TypeScript, JavaScript, React Native Expo, Node.js, PostgreSQL (Intermediate Level)",
+        "Blockchain Technologies: Tezos Protocol, Layer 1/2 Solutions, Smart Contracts, dApps",
+        "Development Tools: Git, GitLab/GitHub CI/CD, Docker"
+      ]
+    },
+    {
+      "category": "Specialized Skills",
+      "items": [
+        "Verification & Analysis: Formal Verification, Abstract Interpretation, Static Analysis",
+        "Software Engineering: Test-Driven Development, Code Review, Technical Documentation",
+        "Research: Academic Publishing, Technical Writing, Algorithm Design"
+      ]
+    },
+    {
+      "category": "Languages",
+      "items": [
+        "Vietnamese: Native",
+        "English: Professional working proficiency",
+        "French: Intermediate (B1)"
+      ]
+    }
+  ]
+}

@@ -1,16 +1,25 @@
-[
-  {
-    "name": "DeepVision",
-    "description": "A deep learning framework for computer vision tasks",
-    "github_url": "https://github.com/yourusername/deepvision",
-    "documentation_url": "https://deepvision.readthedocs.io",
-    "technologies": ["Python", "PyTorch", "OpenCV"]
-  },
-  {
-    "name": "MLFlow",
-    "description": "Machine learning experiment tracking and model management",
-    "github_url": "https://github.com/yourusername/mlflow",
-    "documentation_url": "https://mlflow.readthedocs.io",
-    "technologies": ["Python", "Flask", "SQLite"]
-  }
-]
+{
+  "projects": [
+    {
+      "name": "KaSa",
+      "description": "A static analyser for Kappa models. It is written in functional programming language OCaml",
+      "github_url": null,
+      "documentation_url": null,
+      "technologies": ["OCaml"]
+    },
+    {
+      "name": "Rainbow",
+      "description": "A termination certificate verifier. It is an OCaml program, extracted from the program written in the proof assistant Coq",
+      "github_url": null,
+      "documentation_url": null,
+      "technologies": ["OCaml", "Coq"]
+    },
+    {
+      "name": "CoLoR",
+      "description": "A Coq library on rewriting theory and termination. It is written in the proof assistant Coq",
+      "github_url": null,
+      "documentation_url": null,
+      "technologies": ["Coq"]
+    }
+  ]
+}

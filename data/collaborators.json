@@ -1,20 +1,13 @@
-[
-  {
-    "name": "Jane Smith",
-    "institution": "Stanford University",
-    "department": "Computer Science",
-    "email": "jane.smith@stanford.edu",
-    "website_url": "https://stanford.edu/~janesmith",
-    "collaboration_type": "Research",
-    "description": "Collaborated on multiple computer vision projects"
-  },
-  {
-    "name": "Bob Johnson",
-    "institution": "MIT",
-    "department": "Artificial Intelligence Lab",
-    "email": "bob.johnson@mit.edu",
-    "website_url": "https://ai.mit.edu/~bobjohnson",
-    "collaboration_type": "Research",
-    "description": "Co-authored several papers on deep learning"
-  }
-]
+{
+  "collaborators": [
+    {
+      "name": "Jérôme FERET",
+      "institution": "INRIA",
+      "department": "Research fellow",
+      "email": "",
+      "website_url": null,
+      "collaboration_type": "Research Collaboration",
+      "description": "Collaborated on multiple research projects in formal verification and static analysis"
+    }
+  ]
+}

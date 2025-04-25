@@ -1,20 +1,28 @@
 {
   "conferences": [
     {
-      "name": "ICML 2023",
-      "location": "Honolulu, Hawaii",
-      "start_date": "2023-07-23",
-      "end_date": "2023-07-29",
-      "website_url": "https://icml.cc/2023",
-      "description": "International Conference on Machine Learning"
+      "name": "The 8th International Workshop on Static Analysis for Systems Biology",
+      "location": "New York University, New York, New York City, USA",
+      "start_date": "29 Aug 2017",
+      "end_date": "29 Aug 2017",
+      "website_url": null,
+      "description": "Presented: Translating BNGL models into Kappa, our experience"
     },
     {
-      "name": "PLDI 2022",
-      "location": "San Diego, California",
-      "start_date": "2022-06-13",
-      "end_date": "2022-06-17",
-      "website_url": "https://pldi22.sigplan.org",
-      "description": "Programming Language Design and Implementation"
+      "name": "The 24th Static Analysis Symposium",
+      "location": "New York City, New York, USA",
+      "start_date": "30 Aug 2017",
+      "end_date": "1 Sep 2017",
+      "website_url": null,
+      "description": "Attended conference"
+    },
+    {
+      "name": "The 15th Conference on Computational Methods in Systems Biology",
+      "location": "Darmstadt, Germany",
+      "start_date": "27 Sep 2017",
+      "end_date": "29 Sep 2017",
+      "website_url": null,
+      "description": "Presented: KaDE: a Tool to Compile Kappa Rules into (Reduced) ODE Models"
     }
   ]
 }
