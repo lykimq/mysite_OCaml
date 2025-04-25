@@ -1,5 +1,5 @@
 (library
  (name mysite_OCaml)
- (modules cv cv_view cv_data)
- (libraries yojson tyxml)
+ (modules data_store home_view shared_view education_view experience_view skills_view publications_view conferences_view software_view collaborators_view)
+ (libraries tyxml yojson logs)
  (wrapped false))

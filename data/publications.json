@@ -1,0 +1,33 @@
+{
+  "papers": [
+    {
+      "id": "paper1",
+      "title": "Advanced Machine Learning Techniques",
+      "authors": ["John Doe", "Jane Smith", "Bob Johnson"],
+      "conference": "ICML 2023",
+      "year": 2023,
+      "paper_url": "https://example.com/paper1.pdf",
+      "talk_url": "https://example.com/talk1"
+    },
+    {
+      "id": "paper2",
+      "title": "Functional Programming in Practice",
+      "authors": ["John Doe", "Alice Brown"],
+      "conference": "PLDI 2022",
+      "year": 2022,
+      "paper_url": "https://example.com/paper2.pdf",
+      "talk_url": null
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk1",
+      "title": "Introduction to OCaml",
+      "authors": ["John Doe"],
+      "conference": "OCaml Workshop 2023",
+      "year": 2023,
+      "paper_url": null,
+      "talk_url": "https://example.com/talk1"
+    }
+  ]
+}

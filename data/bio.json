@@ -1,0 +1,75 @@
+{
+  "name": "John Doe",
+  "title": "Senior Software Engineer",
+  "email": "john.doe@example.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "San Francisco, CA",
+  "summary": "Experienced software engineer with a passion for functional programming and web development.",
+  "education": [
+    {
+      "institution": "Stanford University",
+      "degree": "Ph.D.",
+      "field": "Computer Science",
+      "start_date": "2016-09",
+      "end_date": "2020-06"
+    },
+    {
+      "institution": "MIT",
+      "degree": "M.S.",
+      "field": "Artificial Intelligence",
+      "start_date": "2014-09",
+      "end_date": "2016-05"
+    },
+    {
+      "institution": "UC Berkeley",
+      "degree": "B.S.",
+      "field": "Computer Science",
+      "start_date": "2010-09",
+      "end_date": "2014-05"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Google Research",
+      "position": "Research Scientist",
+      "start_date": "2020-07",
+      "end_date": null,
+      "description": [
+        "Led research in machine learning and computer vision",
+        "Published multiple papers in top-tier conferences",
+        "Mentored junior researchers"
+      ]
+    },
+    {
+      "company": "Facebook AI Research",
+      "position": "Research Intern",
+      "start_date": "2019-06",
+      "end_date": "2019-08",
+      "description": [
+        "Worked on deep learning models for natural language processing",
+        "Implemented and evaluated novel architectures"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["OCaml", "Python", "Rust", "JavaScript"]
+    },
+    {
+      "category": "Machine Learning",
+      "items": ["PyTorch", "TensorFlow", "Scikit-learn"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Git", "Docker", "PostgreSQL", "React"]
+    }
+  ],
+  "cv_url": "/static/cv.pdf",
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername",
+    "google_scholar": "https://scholar.google.com/citations?user=yourid"
+  }
+}

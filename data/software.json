@@ -1,0 +1,16 @@
+[
+  {
+    "name": "DeepVision",
+    "description": "A deep learning framework for computer vision tasks",
+    "github_url": "https://github.com/yourusername/deepvision",
+    "documentation_url": "https://deepvision.readthedocs.io",
+    "technologies": ["Python", "PyTorch", "OpenCV"]
+  },
+  {
+    "name": "MLFlow",
+    "description": "Machine learning experiment tracking and model management",
+    "github_url": "https://github.com/yourusername/mlflow",
+    "documentation_url": "https://mlflow.readthedocs.io",
+    "technologies": ["Python", "Flask", "SQLite"]
+  }
+]
