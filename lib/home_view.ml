@@ -128,7 +128,15 @@ let create_collaborators_section collaborators =
             p ~a:[a_class ["institution"]] [txt (strip_quotes collaborator.institution)];
             p ~a:[a_class ["department"]] [txt (strip_quotes collaborator.department)];
             p ~a:[a_class ["collaboration-type"]] [txt (strip_quotes collaborator.collaboration_type)];
-            p ~a:[a_class ["description"]] [txt (strip_quotes collaborator.description)]
+            p ~a:[a_class ["description"]] [txt (strip_quotes collaborator.description)];
+            (match collaborator.website_url with
+            | Some url ->
+                div ~a:[a_class ["collaborator-links"]] [
+                  a ~a:[a_href (strip_quotes url); a_class ["link"]; a_target "_blank"] [
+                    txt "Website"
+                  ]
+                ]
+            | None -> div [])
           ]
         ) collaborators
       )
@@ -147,7 +155,21 @@ let create_publications_preview publications =
             h3 [txt (strip_quotes pub.title)];
             p ~a:[a_class ["authors"]] [txt (String.concat ", " (List.map (fun a -> strip_quotes a) pub.authors))];
             p ~a:[a_class ["conference"]] [txt (strip_quotes pub.conference)];
-            p ~a:[a_class ["year"]] [txt (string_of_int pub.year)]
+            p ~a:[a_class ["year"]] [txt (string_of_int pub.year)];
+            div ~a:[a_class ["publication-links"]] [
+              (match pub.paper_url with
+              | Some url ->
+                  a ~a:[a_href (strip_quotes url); a_class ["link"]; a_target "_blank"] [
+                    txt "Paper"
+                  ]
+              | None -> span []);
+              (match pub.talk_url with
+              | Some url ->
+                  a ~a:[a_href (strip_quotes url); a_class ["link"]; a_target "_blank"] [
+                    txt "Talk"
+                  ]
+              | None -> span [])
+            ]
           ]
         ) preview_items
       );

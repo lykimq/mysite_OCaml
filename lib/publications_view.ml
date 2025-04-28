@@ -9,10 +9,10 @@ let create_publication_card (publication : publication) =
     p ~a:[a_class ["conference"]] [txt (strip_quotes publication.conference)];
     p ~a:[a_class ["year"]] [txt (strip_quotes (string_of_int publication.year))];
     (match publication.paper_url with
-    | Some url -> a ~a:[a_href url; a_class ["paper-link"]] [txt "View Paper"]
+    | Some url -> a ~a:[a_href url; a_class ["paper-link"]; a_target "_blank"] [txt "View Paper"]
     | None -> div []);
     (match publication.talk_url with
-    | Some url -> a ~a:[a_href url; a_class ["talk-link"]] [txt "View Talk"]
+    | Some url -> a ~a:[a_href url; a_class ["talk-link"]; a_target "_blank"] [txt "View Talk"]
     | None -> div [])
   ]
 

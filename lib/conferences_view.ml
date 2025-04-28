@@ -8,7 +8,7 @@ let create_conference_card (conference : conference) =
     p ~a:[a_class ["location"]] [txt (strip_quotes conference.location)];
     create_date_range (strip_quotes conference.start_date) (Some (strip_quotes conference.end_date));
     (match conference.website_url with
-    | Some url -> a ~a:[a_href url; a_class ["website-link"]] [txt "View Website"]
+    | Some url -> a ~a:[a_href url; a_class ["website-link"]; a_target "_blank"] [txt "View Website"]
     | None -> div []);
     p ~a:[a_class ["description"]] [txt (strip_quotes conference.description)]
   ]

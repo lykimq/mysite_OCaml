@@ -7,12 +7,12 @@ let create_software_card (software : software) =
     h3 [txt (strip_quotes software.name)];
     p ~a:[a_class ["description"]] [txt (strip_quotes software.description)];
     (match software.github_url with
-    | Some url -> a ~a:[a_href url; a_class ["github-link"]] [txt "View on GitHub"]
+    | Some url -> a ~a:[a_href url; a_class ["github-link"]; a_target "_blank"] [txt "View on GitHub"]
     | None -> div []);
     (match software.documentation_url with
-    | Some url -> a ~a:[a_href url; a_class ["docs-link"]] [txt "View Documentation"]
+    | Some url -> a ~a:[a_href url; a_class ["docs-link"]; a_target "_blank"] [txt "View Documentation"]
     | None -> div []);
-    create_tech_tags software.technologies
+    create_tech_tags (List.map strip_quotes software.technologies)
   ]
 
 let render_software_page () =

@@ -3,8 +3,8 @@
     {
       "name": "Tezos",
       "description": "A blockchain platform that allows users to send and receive tokens, create smart contracts, and participate in governance.",
-      "github_url": "https://github.com/tezos/tezos",
-      "documentation_url": "https://tezos.com/developers/docs",
+      "github_url": "https://gitlab.com/tezos/tezos",
+      "documentation_url": "https://tezos.com/",
       "technologies": ["OCaml", "ReasonML", "JavaScript", "Docker", "Git"]
     },
     {

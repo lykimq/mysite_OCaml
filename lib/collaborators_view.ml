@@ -24,7 +24,7 @@ let create_collaborator_card collaborator =
         p [txt collaboration_type];
         p [txt description];
         (match website_url with
-        | Some url -> p ~a:[a_class ["website-link"]] [a ~a:[a_href url] [txt "Website"]]
+        | Some url -> p ~a:[a_class ["website-link"]] [a ~a:[a_href url; a_target "_blank"] [txt "Website"]]
         | None -> p [txt ""])
       ]
     ]

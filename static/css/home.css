@@ -179,6 +179,50 @@ body {
   margin: 0.25rem 0;
 }
 
+/* Collaborator links */
+.collaborator-links {
+  margin-top: 1rem;
+}
+
+.collaborator-links .link {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.collaborator-links .link:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Publication links */
+.publication-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.publication-links .link {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.publication-links .link:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .container {
