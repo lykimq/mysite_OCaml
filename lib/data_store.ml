@@ -29,6 +29,8 @@ type bio = {
   phone: string;
   location: string;
   summary: string;
+  cv_url: string;
+  social: (string * string) list;
 }
 
 type publication = {
@@ -83,7 +85,11 @@ let get_bio () =
     let phone = json |> member "phone" |> to_string in
     let location = json |> member "location" |> to_string in
     let summary = json |> member "summary" |> to_string in
-    Some { name; title; email; phone; location; summary }
+    let cv_url = json |> member "cv_url" |> to_string in
+    let social = json |> member "social" |> to_assoc |> List.map (fun (k, v) ->
+      (k, to_string v)
+    ) in
+    Some { name; title; email; phone; location; summary; cv_url; social }
   | None -> None
 
 let get_work_experience () =

@@ -1,19 +1,26 @@
 /* Base styles */
 :root {
-  --primary-color: #2c3e50;
+  --primary-color: #2563eb;
   --secondary-color: #3498db;
-  --text-color: #333;
-  --light-gray: #f5f5f5;
-  --border-color: #ddd;
+  --text-color: #1f2937;
+  --background-color: #ffffff;
+  --section-background: #f9fafb;
+  --border-color: #e5e7eb;
+  --hover-color: #f3f4f6;
   --spacing-unit: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  margin: 0;
-  padding: 0;
+  background-color: var(--background-color);
 }
 
 .container {
@@ -41,9 +48,10 @@ body {
 }
 
 .bio-content {
-  background-color: var(--light-gray);
+  background-color: var(--section-background);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .bio-content h3 {
@@ -56,21 +64,51 @@ body {
   margin: 0.5rem 0;
 }
 
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-item {
+  margin: 0;
+}
+
+.social-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
 /* Tab links */
 .tab-links {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color: var(--light-gray);
-  border-radius: 8px;
+  background-color: var(--section-background);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tab-link {
   padding: 0.5rem 1rem;
   color: var(--primary-color);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   transition: background-color 0.3s;
 }
 
@@ -90,9 +128,10 @@ body {
 }
 
 .content-item {
-  background-color: var(--light-gray);
+  background-color: var(--section-background);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -111,15 +150,22 @@ body {
   color: var(--text-color);
 }
 
-/* Skills section specific */
+/* Skills section */
 .skill-items {
   list-style-type: none;
   padding: 0;
   margin: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .skill-items li {
-  padding: 0.25rem 0;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
 }
 
 /* Description list */

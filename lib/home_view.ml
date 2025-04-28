@@ -24,7 +24,24 @@ let create_bio_section (bio : bio option) =
             ; p ~a:[a_class ["title"]] [txt bio.title]
             ; p ~a:[a_class ["contact"]] [txt bio.email]
             ; p ~a:[a_class ["location"]] [txt bio.location]
-            ; p ~a:[a_class ["summary"]] [txt bio.summary] ]
+            ; p ~a:[a_class ["summary"]] [txt bio.summary]
+            ; div ~a:[a_class ["social-items"]] [
+                a ~a:[a_href bio.cv_url; a_class ["social-link"]] [
+                  txt "Download CV"
+                ]
+              ]
+            ; div ~a:[a_class ["social-links"]] [
+                ul ~a:[a_class ["social-list"]] (
+                  List.map (fun (platform, url) ->
+                    li ~a:[a_class ["social-item"]] [
+                      a ~a:[a_href url; a_class ["social-link"]] [
+                        txt platform
+                      ]
+                    ]
+                  ) bio.social
+                )
+              ]
+            ]
         ]
   | None ->
       div []
