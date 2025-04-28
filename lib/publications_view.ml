@@ -4,10 +4,10 @@ open Shared_view
 
 let create_publication_card (publication : publication) =
   create_card [
-    h3 [txt publication.title];
+    h3 [txt (strip_quotes publication.title)];
     create_author_list publication.authors;
-    p ~a:[a_class ["conference"]] [txt publication.conference];
-    p ~a:[a_class ["year"]] [txt (string_of_int publication.year)];
+    p ~a:[a_class ["conference"]] [txt (strip_quotes publication.conference)];
+    p ~a:[a_class ["year"]] [txt (strip_quotes (string_of_int publication.year))];
     (match publication.paper_url with
     | Some url -> a ~a:[a_href url; a_class ["paper-link"]] [txt "View Paper"]
     | None -> div []);

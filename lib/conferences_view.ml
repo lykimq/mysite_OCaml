@@ -4,13 +4,13 @@ open Shared_view
 
 let create_conference_card (conference : conference) =
   create_card [
-    h3 [txt conference.name];
-    p ~a:[a_class ["location"]] [txt conference.location];
-    create_date_range conference.start_date (Some conference.end_date);
+    h3 [txt (strip_quotes conference.name)];
+    p ~a:[a_class ["location"]] [txt (strip_quotes conference.location)];
+    create_date_range (strip_quotes conference.start_date) (Some (strip_quotes conference.end_date));
     (match conference.website_url with
     | Some url -> a ~a:[a_href url; a_class ["website-link"]] [txt "View Website"]
     | None -> div []);
-    p ~a:[a_class ["description"]] [txt conference.description]
+    p ~a:[a_class ["description"]] [txt (strip_quotes conference.description)]
   ]
 
 let render_conferences_page () =

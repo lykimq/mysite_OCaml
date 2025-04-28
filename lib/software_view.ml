@@ -4,8 +4,8 @@ open Shared_view
 
 let create_software_card (software : software) =
   create_card [
-    h3 [txt software.name];
-    p ~a:[a_class ["description"]] [txt software.description];
+    h3 [txt (strip_quotes software.name)];
+    p ~a:[a_class ["description"]] [txt (strip_quotes software.description)];
     (match software.github_url with
     | Some url -> a ~a:[a_href url; a_class ["github-link"]] [txt "View on GitHub"]
     | None -> div []);

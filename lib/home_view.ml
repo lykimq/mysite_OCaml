@@ -1,5 +1,6 @@
 open Tyxml.Html
 open Data_store
+open Shared_view
 
 let take n lst =
   let rec aux acc n = function
@@ -20,11 +21,11 @@ let create_bio_section (bio : bio option) =
         [ create_section_header "About Me"
         ; div
             ~a:[a_class ["bio-content"]]
-            [ h3 [txt bio.name]
-            ; p ~a:[a_class ["title"]] [txt bio.title]
-            ; p ~a:[a_class ["contact"]] [txt bio.email]
-            ; p ~a:[a_class ["location"]] [txt bio.location]
-            ; p ~a:[a_class ["summary"]] [txt bio.summary]
+            [ h3 [txt (strip_quotes bio.name)]
+            ; p ~a:[a_class ["title"]] [txt (strip_quotes bio.title)]
+            ; p ~a:[a_class ["contact"]] [txt (strip_quotes bio.email)]
+            ; p ~a:[a_class ["location"]] [txt (strip_quotes bio.location)]
+            ; p ~a:[a_class ["summary"]] [txt (strip_quotes bio.summary)]
             ; div ~a:[a_class ["social-items"]] [
                 a ~a:[a_href bio.cv_url; a_class ["social-link"]] [
                   txt "Download CV"
@@ -48,9 +49,9 @@ let create_bio_section (bio : bio option) =
 
 let create_tab_links () =
   div ~a:[a_class ["tab-links"]] [
-    a ~a:[a_href "/publications"; a_class ["tab-link"]] [txt "Publications"];
-    a ~a:[a_href "/conferences"; a_class ["tab-link"]] [txt "Conferences"];
-    a ~a:[a_href "/software"; a_class ["tab-link"]] [txt "Software"];
+    a ~a:[a_href "/publications"; a_class ["tab-link"]] [txt (strip_quotes "Publications")];
+    a ~a:[a_href "/conferences"; a_class ["tab-link"]] [txt (strip_quotes "Conferences")];
+    a ~a:[a_href "/software"; a_class ["tab-link"]] [txt (strip_quotes "Software")];
   ]
 
 let create_education_section education =
@@ -62,10 +63,10 @@ let create_education_section education =
       div ~a:[a_class ["content-list"]] (
         List.map (fun (edu : education) ->
           div ~a:[a_class ["content-item"]] [
-            h3 [txt edu.institution];
-            p ~a:[a_class ["degree"]] [txt (Printf.sprintf "%s in %s" edu.degree edu.field)];
+            h3 [txt (strip_quotes edu.institution)];
+            p ~a:[a_class ["degree"]] [txt (Printf.sprintf "%s in %s" (strip_quotes edu.degree) (strip_quotes edu.field))];
             p ~a:[a_class ["date"]] [
-              txt (Printf.sprintf "%s - %s" edu.start_date
+              txt (Printf.sprintf "%s - %s" (strip_quotes edu.start_date)
                 (match edu.end_date with Some d -> d | None -> "Present"))
             ]
           ]
@@ -82,14 +83,14 @@ let create_work_experience_section work_experience =
       div ~a:[a_class ["content-list"]] (
         List.map (fun (exp : work_experience) ->
           div ~a:[a_class ["content-item"]] [
-            h3 [txt exp.company];
-            p ~a:[a_class ["position"]] [txt exp.position];
+            h3 [txt (strip_quotes exp.company)];
+            p ~a:[a_class ["position"]] [txt (strip_quotes exp.position)];
             p ~a:[a_class ["date"]] [
-              txt (Printf.sprintf "%s - %s" exp.start_date
+              txt (Printf.sprintf "%s - %s" (strip_quotes exp.start_date)
                 (match exp.end_date with Some d -> d | None -> "Present"))
             ];
             ul ~a:[a_class ["description-list"]] (
-              List.map (fun desc -> li [txt desc]) exp.description
+              List.map (fun desc -> li [txt (strip_quotes desc)]) exp.description
             )
           ]
         ) work_experience
@@ -105,9 +106,9 @@ let create_skills_section skills =
       div ~a:[a_class ["content-list"]] (
         List.map (fun (skill : skill) ->
           div ~a:[a_class ["content-item"]] [
-            h3 [txt skill.category];
+            h3 [txt (strip_quotes skill.category)];
             ul ~a:[a_class ["skill-items"]] (
-              List.map (fun item -> li [txt item]) skill.items
+              List.map (fun item -> li [txt (strip_quotes item)]) skill.items
             )
           ]
         ) skills
@@ -123,11 +124,11 @@ let create_collaborators_section collaborators =
       div ~a:[a_class ["content-list"]] (
         List.map (fun (collaborator : collaborator) ->
           div ~a:[a_class ["content-item"]] [
-            h3 [txt collaborator.name];
-            p ~a:[a_class ["institution"]] [txt collaborator.institution];
-            p ~a:[a_class ["department"]] [txt collaborator.department];
-            p ~a:[a_class ["collaboration-type"]] [txt collaborator.collaboration_type];
-            p ~a:[a_class ["description"]] [txt collaborator.description]
+            h3 [txt (strip_quotes collaborator.name)];
+            p ~a:[a_class ["institution"]] [txt (strip_quotes collaborator.institution)];
+            p ~a:[a_class ["department"]] [txt (strip_quotes collaborator.department)];
+            p ~a:[a_class ["collaboration-type"]] [txt (strip_quotes collaborator.collaboration_type)];
+            p ~a:[a_class ["description"]] [txt (strip_quotes collaborator.description)]
           ]
         ) collaborators
       )
@@ -143,9 +144,9 @@ let create_publications_preview publications =
       div ~a:[a_class ["preview-list"]] (
         List.map (fun (pub : publication) ->
           div ~a:[a_class ["preview-item"]] [
-            h3 [txt pub.title];
-            p ~a:[a_class ["authors"]] [txt (String.concat ", " pub.authors)];
-            p ~a:[a_class ["conference"]] [txt pub.conference];
+            h3 [txt (strip_quotes pub.title)];
+            p ~a:[a_class ["authors"]] [txt (String.concat ", " (List.map (fun a -> strip_quotes a) pub.authors))];
+            p ~a:[a_class ["conference"]] [txt (strip_quotes pub.conference)];
             p ~a:[a_class ["year"]] [txt (string_of_int pub.year)]
           ]
         ) preview_items
@@ -169,10 +170,10 @@ let create_conferences_preview conferences =
       div ~a:[a_class ["preview-list"]] (
         List.map (fun (conf : conference) ->
           div ~a:[a_class ["preview-item"]] [
-            h3 [txt conf.name];
-            p ~a:[a_class ["location"]] [txt conf.location];
+            h3 [txt (strip_quotes conf.name)];
+            p ~a:[a_class ["location"]] [txt (strip_quotes conf.location)];
             p ~a:[a_class ["date"]] [
-              txt (Printf.sprintf "%s - %s" conf.start_date conf.end_date)
+              txt (Printf.sprintf "%s - %s" (strip_quotes conf.start_date) (strip_quotes conf.end_date))
             ]
           ]
         ) preview_items
@@ -196,10 +197,10 @@ let create_software_preview softwares =
       div ~a:[a_class ["preview-list"]] (
         List.map (fun (software : software) ->
           div ~a:[a_class ["preview-item"]] [
-            h3 [txt software.name];
-            p ~a:[a_class ["description"]] [txt software.description];
+            h3 [txt (strip_quotes software.name)];
+            p ~a:[a_class ["description"]] [txt (strip_quotes software.description)];
             p ~a:[a_class ["technologies"]] [
-              txt (String.concat ", " software.technologies)
+              txt (String.concat ", " (List.map (fun t -> strip_quotes t) software.technologies))
             ]
           ]
         ) preview_items
