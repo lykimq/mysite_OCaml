@@ -35,7 +35,7 @@ let create_bio_section (bio : bio option) =
                 ul ~a:[a_class ["social-list"]] (
                   List.map (fun (platform, url) ->
                     li ~a:[a_class ["social-item"]] [
-                      a ~a:[a_href url; a_class ["social-link"]] [
+                      a ~a:[a_href (strip_quotes url); a_class ["social-link"]; a_target "_blank"] [
                         txt platform
                       ]
                     ]
